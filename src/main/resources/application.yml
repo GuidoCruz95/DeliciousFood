@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: deliciousfood
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deliciousfood
+    username: coderoad
+    password: fake-pass
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+    flyway:
+      enabled: true
+      locations: classpath:db/migration
+      baseline-description: 'Initial'
+      baseline-on-migrate: true
+    activemq:
+      broker-url: tcp://localhost:61616
+      user: activemq-user
+      password: activemq-pass
